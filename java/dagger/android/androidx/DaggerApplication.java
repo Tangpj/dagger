@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-package dagger.android.androidx;
+package com.tangpj.recurve.dagger.androidx;
 
 import androidx.fragment.app.Fragment;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
-import dagger.android.support.HasSupportFragmentInjector;
 
 import javax.inject.Inject;
 
 /**
  * An {@link android.app.Application} that injects its members and can be used to inject {@link
- * android.app.Activity}s, {@linkplain androidx.fragment.app.Fragment framework fragments}, {@linkplain
+ * android.app.Activity}s, {@linkplain Fragment framework fragments}, {@linkplain
  * Fragment support fragments}, {@link android.app.Service}s, {@link
  * android.content.BroadcastReceiver}s, and {@link android.content.ContentProvider}s attached to it.
  */

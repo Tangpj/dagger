@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dagger.android.androidx;
+package com.tangpj.recurve.dagger.androidx;
 
 import android.os.Bundle;
 
@@ -24,8 +24,6 @@ import androidx.fragment.app.Fragment;
 import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasFragmentInjector;
-import dagger.android.support.HasSupportFragmentInjector;
 import dagger.internal.Beta;
 import javax.inject.Inject;
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dagger.android.androidx;
+package com.tangpj.recurve.dagger.androidx;
 
 import static android.util.Log.DEBUG;
 import static dagger.internal.Preconditions.checkNotNull;
@@ -24,7 +24,6 @@ import android.util.Log;
 
 import androidx.fragment.app.Fragment;
 import dagger.android.AndroidInjector;
-import dagger.android.support.HasSupportFragmentInjector;
 import dagger.internal.Beta;
 
 /** Injects core Android types from support libraries. */
@@ -45,14 +44,14 @@ public final class AndroidxInjection {
    *   <li>Uses the {@code fragment}'s {@link Fragment#getActivity() activity} if it implements
    *       {@link HasAndroidxFragmentInjector}, and if not
    *   <li>Uses the {@link android.app.Application} if it implements {@link
-   *       HasSupportFragmentInjector}.
+   *       HasAndroidxFragmentInjector}.
    * </ol>
    *
    * If none of them implement {@link HasAndroidxFragmentInjector}, a {@link
    * IllegalArgumentException} is thrown.
    *
    * @throws IllegalArgumentException if no parent fragment, activity, or application implements
-   *     {@link HasSupportFragmentInjector}.
+   *     {@link HasAndroidxFragmentInjector}.
    */
   public static void inject(Fragment fragment) {
     checkNotNull(fragment, "fragment");
@@ -79,15 +78,15 @@ public final class AndroidxInjection {
   private static HasAndroidxFragmentInjector findHasFragmentInjector(Fragment fragment) {
     Fragment parentFragment = fragment;
     while ((parentFragment = parentFragment.getParentFragment()) != null) {
-      if (parentFragment instanceof HasSupportFragmentInjector) {
+      if (parentFragment instanceof HasAndroidxFragmentInjector) {
         return (HasAndroidxFragmentInjector) parentFragment;
       }
     }
     Activity activity = fragment.getActivity();
-    if (activity instanceof HasSupportFragmentInjector) {
+    if (activity instanceof HasAndroidxFragmentInjector) {
       return (HasAndroidxFragmentInjector) activity;
     }
-    if (activity.getApplication() instanceof HasSupportFragmentInjector) {
+    if (activity.getApplication() instanceof HasAndroidxFragmentInjector) {
       return (HasAndroidxFragmentInjector) activity.getApplication();
     }
     throw new IllegalArgumentException(

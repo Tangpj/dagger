@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dagger.android.androidx;
+package com.tangpj.recurve.dagger.androidx;
 
 import androidx.fragment.app.Fragment;
 import dagger.Module;
@@ -34,11 +34,11 @@ import java.util.Map;
 public abstract class AndroidxInjectionModule {
   @Multibinds
   abstract Map<Class<? extends Fragment>, AndroidInjector.Factory<? extends Fragment>>
-      supportFragmentInjectorFactories();
+      androidxFragmentInjectorFactories();
 
   @Multibinds
   abstract Map<String, AndroidInjector.Factory<? extends Fragment>>
-      supportFragmentInjectorFactoriesWithStringKeys();
+      androidxFragmentInjectorFactoriesWithStringKeys();
 
   private AndroidxInjectionModule() {}
 }

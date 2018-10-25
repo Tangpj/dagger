@@ -15,7 +15,7 @@
  */
 
 @CheckReturnValue
-package dagger.android.androidx;
+package com.tangpj.recurve.dagger.androidx;
 
 /**
  * Additions to the APIs in {@link dagger.android} for use with the <a
